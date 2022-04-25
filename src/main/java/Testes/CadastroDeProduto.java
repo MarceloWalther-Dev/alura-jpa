@@ -17,11 +17,12 @@ public class CadastroDeProduto {
 
 
         EntityManager em = JPAUtil.getEntityManager();
+        em.getTransaction().begin();
+
         ProdutoDao produtoDao = new ProdutoDao(em);
         CategoriaDao categoriaDao = new CategoriaDao(em);
 
 
-        em.getTransaction().begin();
 
         categoriaDao.cadastrar(categoriaCelular);
         produtoDao.cadastrar(celular);
