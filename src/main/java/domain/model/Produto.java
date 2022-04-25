@@ -1,6 +1,5 @@
 package domain.model;
 
-import enuns.Categoria;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +25,7 @@ public class Produto {
 
     private LocalDate dataCadastro;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private Categoria categoria;
 
     public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
